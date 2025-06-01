@@ -1,0 +1,21 @@
+Proje Özeti
+Amaç: Sentetik olarak oluşturulmuş bir veri seti kullanarak, değerli taşların fiyatlarını tahmin etmek.
+
+Problem Türü: Regresyon (sürekli değer tahmini)
+
+Veri Özellikleri: Tamamı sayısal sütunlardan oluşan, temiz ve eksiksiz bir veri seti.
+
+Hedef Değişken: price
+
+Kullanım Alanları: Makine öğrenimi algoritmalarının karşılaştırılması, modelleme pratiği, özellik mühendisliği ve hiperparametre optimizasyonu.
+
+
+Eğitim Odaklı: Kaggle'ın Playground serisi, öğrenme ve pratik yapma amacıyla tasarlanmıştır.
+
+Temiz Veri: Eksik değer içermeyen, tamamen sayısal bir veri seti.
+
+Modelleme Fırsatları: Regresyon problemleri için çeşitli makine öğrenimi algoritmalarını deneme imkanı sunar.
+
+Görselleştirme ve Analiz: EDA (Exploratory Data Analysis) ve veri görselleştirme için zengin bir veri seti.
+
+Gemstone Price Prediction

@@ -1,0 +1,60 @@
+# Proje Adı:
+Gemstone Price Prediction – Makine Öğrenmesi ile Değerli Taş Fiyat Tahmini
+
+# Proje Türü:
+Regresyon – Sürekli Değer Tahmini
+
+# Veri Seti:
+Yapay olarak oluşturulmuş 1000 satırlık tabular veri seti.
+Veri seti, değerli taşlara ait fiziksel ölçümler (carat, depth, x, y, z...) ve kalite puanları (clarity_score, color_score, cut_score) ile oluşturulmuştur.
+
+# Amaç:
+Verilen fiziksel ve kalite özelliklerine göre değerli bir taşın fiyatını (USD) tahmin etmektir.
+
+# Kullanılan Kütüphaneler:
+- pandas
+- numpy
+- scikit-learn
+- streamlit
+- joblib
+- matplotlib / seaborn (EDA için)
+
+# Aşamalar:
+
+1. 📊 Veri Keşfi (EDA):
+   - Veri tipi ve dağılımları incelendi
+   - Korelasyon analizi ile fiyat üzerinde en etkili değişkenler belirlendi: carat, clarity_score, cut_score
+
+2. 🧹 Veri Ön İşleme:
+   - Eksik değer bulunmadığı için doğrudan modellemeye geçildi
+   - Özellikler normalize edilmedi (Random Forest bu gereksinime ihtiyaç duymaz)
+
+3. 🧠 Modelleme:
+   - Kullanılan algoritma: RandomForestRegressor
+   - Train-Test ayrımı %80 / %20 olarak yapıldı
+   - Model performansı:
+     - RMSE: 605.16
+     - R²: 0.9549 → yüksek doğruluk
+
+4. 🧪 Test Senaryosu:
+   - Kullanıcıdan alınan fiziksel ve kalite değerlerine göre tahmin yapacak yapı kuruldu
+
+5. 🌐 Streamlit Arayüzü:
+   - Kullanıcıdan `carat`, `depth`, `x`, `y`, `z`, `clarity_score`, `cut_score`, vb. bilgiler alınıyor
+   - Eğitilen model tahmin yapıyor ve fiyatı ekranda gösteriyor
+
+# Çıktılar:
+- `rf_model.pkl` → Eğitilmiş model dosyası
+- `model_columns.pkl` → Modelin beklediği özellik listesi
+- `app.py` → Streamlit uygulama arayüzü
+- `requirements.txt` → Gerekli kütüphaneler listesi
+
+# Gelecek Geliştirmeler:
+- XGBoost, LightGBM gibi algoritmalar denenebilir
+- Gerçek veri entegrasyonu yapılabilir (örneğin: gerçek elmas veri setleri)
+- Özellik mühendisliği: log dönüşümü, oranlar, etkileşimli değişkenler
+- API servisi ile RESTful endpoint oluşturulabilir
+
+# Projenin Amacı:
+Bu proje, regresyon temelli bir fiyat tahmini probleminde uçtan uca makine öğrenmesi sürecinin (veri üretimi, modelleme, değerlendirme, dağıtım) tamamını göstermektedir. Gerçek veriye benzer yapay veri ile çalışmak, gerçek dünya problemlerine yaklaşımı öğrenme açısından faydalı bir simülasyon sunmaktadır.
+
